@@ -26,36 +26,24 @@ export function UserOffer({ pubkey }: { pubkey: string }) {
   }, [pubkey])
 
   return (
-    <Pressable onPress={() => navigation.navigate("User", { id: pubkey })} style={$user}> 
+    <Pressable onPress={() => navigation.navigate("User", { id: pubkey })} style={$user}>
       <AutoImage 
         source={{ uri: profile?.picture || "https://void.cat/d/HxXbwgU9ChcQohiVxSybCs.jpg" }} 
         style={$userAvatar} 
-      />  
+      /> 
 
-      <View>  
+      <View> 
 
-        <Text  
+        <Text  text={profile?.display_name || shortenKey(pubkey)} preset="bold" size="xs" style={$userName}/>  
 
-          text={profile?.display_name || shortenKey(pubkey)}  
+        <Text text="Rep.: 90%" preset="bold" size="xs" style={$userRep}/>  
 
-          preset="bold"  
+        <Text text='Copy' onPress ={()=>copyToClipboard(pubkey)}/> // Added copy button to copy the npub code  
 
-          size="xs"  
+       </View>  
 
-          style={$userName}  
-
-        />   
-
-         <Text text="Rep.: 90%" preset="bold" size="xs" style={$userRep} />   
-
-         <View> 
-
-            <Text text='Copy' preset='link' size='xs' onPress ={()=>copyToClipboard(pubkey)}/> 
-
-         </View>    
-
-       </View>   
-    </Pressable>
+    </Pressable>
+      </View>
     </Pressable>
   )
 }
