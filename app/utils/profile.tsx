@@ -69,10 +69,9 @@ export async function updateProfile(profmgr: ProfileManager, profile: Profile & 
 
     const pushSettings = {
       pubkey: pool.ident.pubKey,
-      token, 
-      npubCodeCopyLinkEnabled: true, // new line added 
-      privchat_push_enabled: profile.privchat_push_enabled, 
-      channel_push
+      token,
+      privchat_push_enabled: profile.privchat_push_enabled,
+      channel_push_enabled: profile.channel
 
     const tmpPool = new NostrPool(pool.ident)
     await tmpPool.setRelays(ARCADE_RELAYS)
