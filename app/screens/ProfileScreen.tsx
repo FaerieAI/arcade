@@ -292,7 +292,7 @@ const $sectionDataItem: ViewStyle = {
 
 const $sectionDataItemSubtitle: TextStyle = {
   color: colors.palette.cyan600,
-  fontWeight: 'bold',
+  marginBottom: spacing.small, // add marginBottom to copy button 
 }
 
 const $sectionButton: ViewStyle = {
