@@ -26,20 +26,36 @@ export function UserOffer({ pubkey }: { pubkey: string }) {
   }, [pubkey])
 
   return (
-    <Pressable onPress={() => navigation.navigate("User", { id: pubkey })} style={$user}>
-      <AutoImage
-        source={{ uri: profile?.picture || "https://void.cat/d/HxXbwgU9ChcQohiVxSybCs.jpg" }}
-        style={$userAvatar}
-      />
-      <View>
-        <Text
-          text={profile?.display_name || shortenKey(pubkey)}
-          preset="bold"
-          size="xs"
-          style={$userName}
-        />
-        <Text text="Rep.: 90%" preset="bold" size="xs" style={$userRep} />
-      </View>
+    <Pressable onPress={() => navigation.navigate("User", { id: pubkey })} style={$user}> 
+      <AutoImage 
+        source={{ uri: profile?.picture || "https://void.cat/d/HxXbwgU9ChcQohiVxSybCs.jpg" }} 
+        style={$userAvatar} 
+      />  
+
+      <View>  
+
+        <Text  
+
+          text={profile?.display_name || shortenKey(pubkey)}  
+
+          preset="bold"  
+
+          size="xs"  
+
+          style={$userName}  
+
+        />   
+
+         <Text text="Rep.: 90%" preset="bold" size="xs" style={$userRep} />   
+
+         <View> 
+
+            <Text text='Copy' preset='link' size='xs' onPress ={()=>copyToClipboard(pubkey)}/> 
+
+         </View>    
+
+       </View>   
+    </Pressable>
     </Pressable>
   )
 }
