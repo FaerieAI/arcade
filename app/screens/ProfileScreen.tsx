@@ -292,6 +292,7 @@ const $sectionDataItem: ViewStyle = {
 
 const $sectionDataItemSubtitle: TextStyle = {
   color: colors.palette.cyan600,
+  fontWeight: 'bold',
 }
 
 const $sectionButton: ViewStyle = {
