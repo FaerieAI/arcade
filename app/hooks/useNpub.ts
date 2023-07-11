@@ -22,10 +22,10 @@ export function useNpub() {
 
       }}>  
 
-        <Text style={styles.copyButton}>{copied ? 'Copied' : 'Copy'}</Text>   
+        <Text style={styles.copyButton}>{copied ? 'Copied' : 'Copy'}</Text>  
 
-      </TouchableOpacity>   
+      </TouchableOpacity>    
 
-    </>   
+    </>    
 
-  )    														       }
+    )    														       }
